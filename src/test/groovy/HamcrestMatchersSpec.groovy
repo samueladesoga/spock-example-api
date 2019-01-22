@@ -14,7 +14,11 @@
 
 import spock.lang.Specification
 
-import static spock.util.matcher.HamcrestMatchers.closeTo
+import static spock.util.matcher.HamcrestMatchers.*
+import static org.hamcrest.CoreMatchers.*
+import static spock.util.matcher.HamcrestSupport.*
+import groovyx.net.http.RESTClient
+import spock.lang.*
 
 /**
  * Hamcrest matchers are deeply integrated with Spock's condition mechanism.
@@ -26,10 +30,11 @@ import static spock.util.matcher.HamcrestMatchers.closeTo
  * @since 0.5
  */
 class HamcrestMatchersSpec extends Specification {
-  def "comparing two decimal numbers"() {
-    def myPi = 3.14
+    RESTClient restClient = new RESTClient("http://localhost:16666", JSON)
+  def "Checking is an element is the list"() {
+      List<String> products= ["camera", "laptop", "hifi"]
 
-    expect:
-    myPi closeTo(Math.PI, 0.01)
+      expect:
+      products hasItem("cameraguyui")
   }
 }

@@ -35,6 +35,6 @@ class HamcrestMatchersSpec extends Specification {
       List<String> products= ["camera", "laptop", "hifi"]
 
       expect:
-      products hasItem("cameraguyui")
+      products hasItem("camera")
   }
 }

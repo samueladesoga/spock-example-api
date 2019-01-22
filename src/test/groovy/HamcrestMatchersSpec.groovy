@@ -30,7 +30,7 @@ import spock.lang.*
  * @since 0.5
  */
 class HamcrestMatchersSpec extends Specification {
-    RESTClient restClient = new RESTClient("http://localhost:16666", JSON)
+    RESTClient restClient = new RESTClient("http://localhost:16666")
   def "Checking is an element is the list"() {
       List<String> products= ["camera", "laptop", "hifi"]
 
